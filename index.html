@@ -3,13 +3,13 @@
     <head>
       <title>Barshon Saha</title>
       <meta content="width=device-width, initial-scale=1" name="viewport">
+      <link rel="icon" href="icon.png">
       <link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap" rel="stylesheet">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&amp;display=swap" rel="stylesheet">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&amp;family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
       <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="src/styles/style.css" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==" crossorigin="anonymous">
       <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
@@ -17,158 +17,207 @@
       <meta charset="UTF-8">
       
     
-     <script>
-        if (tailwind && tailwind.config) {
-            tailwind.config = {
-                ...tailwind.config,
-                darkMode: "class",
-            };
-        } else {
-            tailwind.config = {
-            darkMode: "class"
-            }
-        }
-    </script>
-    <script id="__scripts_code__0">
-      if (
-        localStorage.getItem("dark-mode") === "true" ||
-        (!("dark-mode" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.querySelector("html").classList.add("dark");
-      } else {
-        document.querySelector("html").classList.remove("dark");
-      }
-    </script>
+     <style>
+    .content{
+      margin-bottom: 30px;
+    }
+    .rev-card {
+      flex: 0 0 calc(33.333% - 14px);
+      box-sizing: border-box;
+      padding: 28px;
+    }
+    .rev-stars {
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .rev-text {
+      font-size: 14px;
+            line-height: 1.7;
+      margin: 0 0 20px;
+    }
+    .rev-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .rev-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .rev-name {
+      font-size: 13px;
+      font-weight: 600;      
+    }
+    .rev-loc {
+      font-size: 12px;      
+    }
+    .rev-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      cursor: pointer;
+      background: #d1d5db;
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+      padding: 0;
+    }
+    .rev-dot.active {
+    background: #111827;
+      transform: scale(1.35);
 
+    }
+    .rev-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        cursor: pointer;
+        background: #d1d5db;
+        transition: background 0.2s, transform 0.2s;
+        border: none;
+        padding: 0;
+    }
+    .rev-dot.active {
+      background: #FFF;
+        transform: scale(1.35);
+        
+
+    }
+    #rev-prev:hover, #rev-next:hover { background: #f3f4f6; color: #000; transition: 1s ease;}
+    #rev-prev:disabled, #rev-next:disabled { opacity: 0.8; cursor: default; }
+
+    @media (max-width: 640px) {
+      .rev-card { flex: 0 0 100%; }
+    }
+    @media (min-width: 641px) and (max-width: 900px) {
+      .rev-card { flex: 0 0 calc(50% - 10px); }
+    }
+  </style>
     <style>
-	.fiverr:hover{
-	 text-decoration: underline;
-	}
-        :root {
-        --icon-fill: #fff; /* default (light theme) */
+      .logo{
+        font-size: 20px;
       }
-
-      @media (prefers-color-scheme: dark) {
-         :root {
-           --icon-fill: #000; /* dark theme */
-          }
+      .fiverr:hover{
+      text-decoration: underline;
+      }
+      
+      :root {
+       --icon-fill: #000; 
+      }/
+      .gap-3{
+        margin-bottom: 12px;
+      }
+      .package-title{
+        text-align: center;
+      }
     </style>
 
   </head>
   <body>
-    <div class="bg-white dark:bg-neutral-950 font-sans antialiased">
+    <div class="bg-neutral-950 font-sans antialiased">
 
 
-      <nav class="bg-white/30 dark:bg-neutral-950/30 sticky top-0 z-50 backdrop-blur-md border-b border-slate-200/50
-          dark:border-slate-800/50">
+      <nav class="bbg-neutral-950/30 sticky top-0 z-50 backdrop-blur-md border-b border-slate-800/50">
         <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <div class="items-center justify-between h-16 flex">
             <a href="index.html" class="items-center flex gap-2">
-              <div class="w-8 h-8 bg-slate-800 dark:bg-slate-200 rounded-lg items-center justify-center flex">
-                <svg class="w-4 h-4 text-white dark:text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_Ud2HiCZ00">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                </svg>
-              </div>
-              <span class="text-base font-bold text-gray-900 tracking-tight dark:text-neutral-100">DesignStudio</span>
+              <span class="text-base logo font-bold tracking-tight text-neutral-100">Barshon</span>
             </a>
             <div class="md:flex items-center hidden gap-8">
-              <a href="#about" class="text-sm font-medium text-gray-600 dark:text-neutral-400
-                  hover:text-gray-900 dark:hover:text-neutral-100 transition-colors duration-200">About</a>
-              <a href="#reviews" class="text-sm font-medium text-gray-600 dark:text-neutral-400
-                  hover:text-gray-900 dark:hover:text-neutral-100 transition-colors duration-200">Reviews</a>
-              <a href="#posters" class="text-sm font-medium text-gray-600 dark:text-neutral-400
-                  hover:text-gray-900 dark:hover:text-neutral-100 transition-colors duration-200">Portfolio</a>
-              <a href="#pricing" class="text-sm font-medium text-gray-600 dark:text-neutral-400
-                  hover:text-gray-900 dark:hover:text-neutral-100 transition-colors duration-200">Pricing</a>
-              <a href="#contact" class="text-sm font-medium text-gray-600 dark:text-neutral-400
-                  hover:text-gray-900 dark:hover:text-neutral-100 transition-colors duration-200">Contact</a>
+              <a href="#about" class="text-sm font-medium  text-neutral-400
+                    hover:text-neutral-100 transition-colors duration-200">About</a>              
+              <a href="#posters" class="text-sm font-medium text-neutral-400
+                    hover:text-neutral-100 transition-colors duration-200">Portfolio</a>
+              <a href="#reviews" class="text-sm font-medium text-neutral-400
+                    hover:text-neutral-100 transition-colors duration-200">Reviews</a>
+              <a href="#pricing" class="text-sm font-medium text-neutral-400
+                    hover:text-neutral-100 transition-colors duration-200">Pricing</a>
+              <a href="#contact" class="text-sm font-medium text-neutral-400
+                    hover:text-neutral-100 transition-colors duration-200">Contact</a>
             </div>
-            <a href="#contact" class="items-center justify-center bg-slate-800 dark:bg-slate-200
-                text-white font-semibold text-sm px-5 py-2 rounded-xl shadow-sm inline-flex hover:bg-slate-700
-                dark:hover:bg-white dark:text-slate-900 transition-all duration-200">Hire Me</a>
+            <a href="#contact" class="items-center justify-center bg-slate-200
+               font-semibold text-sm px-5 py-2 rounded-xl shadow-sm inline-flex hover:bg-white text-slate-900 transition-all duration-200">Hire Me</a>
           </div>
         </div>
       </nav>
 
 
-      <section class="bg-white dark:bg-neutral-950 py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div class="justify-center mb-8 flex">
-          <span class="items-center bg-slate-50 dark:bg-slate-900/60 text-slate-700 text-sm font-medium px-4 py-1.5
-              rounded-full shadow-sm inline-flex gap-2 border border-slate-200 dark:border-slate-700/60
-              dark:text-slate-300">
-            <span class="w-2 h-2 bg-slate-500 dark:bg-slate-400 rounded-full animate-pulse"></span>
+      <section class="bg-neutral-950 py-38 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="justify-center mb-4 flex">
+          <span class="items-center bg-slate-900/60 text-sm font-medium px-4 py-1.5
+              rounded-full shadow-sm inline-flex gap-2 border-slate-700/60
+              text-slate-300">
+            <span class="w-2 h-2 bg-slate-400 rounded-full animate-pulse"></span>
             Available for freelance projects
           </span>
         </div>
         <div class="mx-auto text-center mb-6 max-w-3xl">
-          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight
-              dark:text-neutral-50">
-            Designs that speak.
-            <span class="text-gray-700 mt-1 block dark:text-slate-400">Posters that convert.</span>
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight
+              text-neutral-50">
+            Designs that attract.
+            <span class="mt-1 block text-slate-400">Content that converts.</span>
           </h2>
         </div>
         <div class="mx-auto text-center mb-12 max-w-xl">
-          <p class="text-lg text-gray-500 leading-relaxed dark:text-neutral-400">Award-winning graphic design for brands,
-              agencies, and creators. Bold visuals, thoughtful composition, and pixel-perfect execution every time.</p>
+          <p class="text-lg  leading-relaxed text-neutral-400">Helping entrepreneur and businesses grow with clean, engaging social media design. Focused on strong branding, clear messaging, and results-driven visuals.</p>
         </div>
         <div class="sm:flex-row items-center justify-center mb-16 flex flex-col gap-4">
-              <a href="#contact" class="items-center justify-center bg-white dark:bg-neutral-900
-              text-gray-700 font-semibold text-base px-8 py-3.5 rounded-xl shadow-sm w-full sm:w-auto inline-flex gap-2
-              border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-neutral-800
-              dark:text-neutral-300 transition-all duration-200">
-            <svg class="w-5 h-5 text-slate-500 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_wEa8jGQIw">
+              <a href="#contact" class="items-center justify-center bg-neutral-900
+               font-semibold text-base px-8 py-3.5 rounded-xl shadow-sm w-full sm:w-auto inline-flex gap-2
+             border border-slate-700 hover:bg-neutral-800
+              text-neutral-300 transition-all duration-200">
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_wEa8jGQIw">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
             </svg>
             Get in touch
           </a>
         </div>
         <div class="items-center justify-center flex flex-wrap gap-3">
-          <div class="items-center bg-slate-50 dark:bg-neutral-900/60 rounded-full px-4 py-2 text-sm text-gray-600 shadow-sm
-              inline-flex gap-2 border border-slate-200 dark:border-slate-800/60 dark:text-neutral-400">
-            <svg class="w-4 h-4 text-slate-500 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_vc17PILCB"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            8+ Years Experience
+          <div class="items-center bg-neutral-900/60 rounded-full px-4 py-2 text-sm  shadow-sm
+              inline-flex gap-2 border border-slate-800/60 text-neutral-400">
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_vc17PILCB"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Experienced Designer
           </div>
-          <div class="items-center bg-slate-50 dark:bg-neutral-900/60 rounded-full px-4 py-2 text-sm text-gray-600 shadow-sm
-              inline-flex gap-2 border border-slate-200 dark:border-slate-800/60 dark:text-neutral-400">
-            <svg class="w-4 h-4 text-slate-500 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_5h19EohB7"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            200+ Projects Delivered
+          <div class="items-center bg-neutral-900/60 rounded-full px-4 py-2 text-sm  shadow-sm
+              inline-flex gap-2 border border-slate-800/60 text-neutral-400">
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_5h19EohB7"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            100+ Projects Completed
           </div>
-          <div class="items-center bg-slate-50 dark:bg-neutral-900/60 rounded-full px-4 py-2 text-sm text-gray-600 shadow-sm
-              inline-flex gap-2 border border-slate-200 dark:border-slate-800/60 dark:text-neutral-400">
-            <svg class="w-4 h-4 text-slate-500 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_f1EaSnqBs"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            100% Client Satisfaction
+          <div class="items-center bg-neutral-900/60 rounded-full px-4 py-2 text-sm shadow-sm
+              inline-flex gap-2 border border-slate-800/60 text-neutral-400">
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_f1EaSnqBs"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Client-Focused Approach
           </div>
-          <div class="items-center bg-slate-50 dark:bg-neutral-900/60 rounded-full px-4 py-2 text-sm text-gray-600 shadow-sm
-              inline-flex gap-2 border border-slate-200 dark:border-slate-800/60 dark:text-neutral-400">
-            <svg class="w-4 h-4 text-slate-500 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_B5xDH3Hoa"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Fast Turnaround
+          <div class="items-center bg-neutral-900/60 rounded-full px-4 py-2 text-sm  shadow-sm
+              inline-flex gap-2 border border-slate-800/60 text-neutral-400">
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_B5xDH3Hoa"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Fast & Reliable Delivery
           </div>
         </div>
       </section>
       
 
-      <section class="bg-slate-50 dark:bg-neutral-900/50 py-24 px-4 sm:px-6 lg:px-8 border-y border-slate-200/70
-          dark:border-slate-800/60" id="about">
+      <section class=" bg-neutral-900/50 py-38 px-4 sm:px-6 lg:px-8 border-y border-slate-800/60" id="about">
         <div class="mx-auto max-w-5xl">
-          <div class="justify-center mb-8 flex">
-            <span class="items-center bg-white dark:bg-neutral-900 text-slate-700 text-sm font-medium px-4 py-1.5
-                rounded-full shadow-sm inline-flex gap-2 border border-slate-200 dark:border-slate-700/60
-                dark:text-slate-300">
-              <span class="w-2 h-2 bg-slate-500 dark:bg-slate-400 rounded-full"></span>
+          <div class="justify-center mb-14 flex">
+            <span class="items-center bg-neutral-900 text-sm font-medium px-4 py-1.5
+                rounded-full shadow-sm inline-flex gap-2 border border-slate-700/60
+               text-slate-300">
+              <span class="w-2 h-2 bg-slate-400 rounded-full"></span>
               Meet the designer
             </span>
           </div>
           <div class="lg:grid-cols-2 items-center grid grid-cols-1 gap-12">
             <div class="items-center lg:items-start flex flex-col">
               <div class="mb-6 relative">
-                <div class="w-52 h-52 rounded-2xl shadow-2xl shadow-slate-900/10 overflow-hidden border-4 border-white
-                    dark:border-neutral-800 dark:shadow-black/40 ring-1 ring-slate-200/60 dark:ring-slate-700/50">
-                  <img alt="Elena Vasquez - Graphic Designer" src="src/img/barshon.webp" class="object-cover w-full
+                <div class="w-52 h-52 rounded-2xl shadow-2xl overflow-hidden border-4 border-neutral-800 shadow-black/40 ring-1 ring-slate-700/50">
+                  <img alt="Barshon Saha - Graphic Designer" src="https://i.imgur.com/Gf2vgNN.png" class="object-cover w-full
                       h-full">
                 </div>
-                <div class="bg-slate-800 dark:bg-slate-200 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg
-                    absolute -bottom-3 -right-3 dark:text-slate-900">✦ Open to work</div>
+                <div class=" bg-slate-200 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg
+                    absolute -bottom-3 -right-3 text-slate-900">✦ Open to work</div>
               </div>
               <div class="items-center mb-3 flex gap-1">
                 <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" id="Windframe_m9g9LrAwz"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -176,59 +225,42 @@
                 <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" id="Windframe_NVukx19F5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                 <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" id="Windframe_6biTrc2FX"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                 <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" id="Windframe_IChNrvmiH"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                <span class="text-sm text-gray-500 ml-1 dark:text-neutral-400">4.9/5 on Fiverr</span>
+                <span class="text-sm  ml-1 text-neutral-400">4.9/5 on Fiverr</span>
               </div>
             </div>
             <div>
-              <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 mb-2 dark:text-neutral-50">Barshon
+              <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2 text-neutral-50">Barshon
                   Saha</h2>
-              <p class="text-slate-600 font-semibold text-base mb-4 dark:text-slate-400">Senior Graphic Designer &amp;
-                  Visual Artist</p>
-              <p class="text-gray-500 leading-relaxed mb-6 dark:text-neutral-400">Hi, I’m Barshon Saha, a professional
-                  Graphic Designer. I create engaging flyers, posters, and branding&nbsp;designs that help businesses
-                  attract customers and grow faster. With years of experience in creative&nbsp;design and visual
-                  communication, I know how to deliver work that speaks to your audience.</p>
-              <p class="text-gray-500 leading-relaxed mb-8 dark:text-neutral-400">an expert graphic designer with 5+ years of experience. I have designed 100+ social media product posts that helped brands generate heavy traffic and sales. I will design high-quality, professional, and creative product posts for your brand.</p>
-              <div class="mb-8 grid grid-cols-3 gap-4">
-                <div class="bg-white dark:bg-neutral-900/70 rounded-xl text-center shadow-sm border border-slate-200/70
-                    dark:border-slate-800/60 p-4">
-                  <p class="text-2xl font-extrabold text-gray-900 dark:text-neutral-50">200+</p>
-                  <p class="text-xs text-gray-500 mt-1 dark:text-neutral-500">Projects done</p>
+              <p class=" font-semibold text-base mb-3 text-slate-400">Senior Graphic Designer & Social Media Specialist</p>
+              <p class=" leading-relaxed mb-10 text-neutral-400">
+
+                I am Barshon Saha. I help businesses grow through strategic content design, branding, and targeted social media marketing. From eye-catching visuals to Meta ad campaigns, I create content that not only looks professional but also drives real engagement, leads, and client bookings.</p>
+              <div class="mb-4 grid grid-cols-3 gap-4">
+                <div class=" bg-neutral-900/70 rounded-xl text-center shadow-sm border border-slate-800/60 p-4">
+                  <p class="text-2xl font-extrabold text-neutral-50">100+</p>
+                  <p class="text-xs mt-1 text-neutral-500">Projects done</p>
                 </div>
-                <div class="bg-white dark:bg-neutral-900/70 rounded-xl text-center shadow-sm border border-slate-200/70
-                    dark:border-slate-800/60 p-4">
-                  <p class="text-2xl font-extrabold text-gray-900 dark:text-neutral-50">85+</p>
-                  <p class="text-xs text-gray-500 mt-1 dark:text-neutral-500">Happy clients</p>
+                <div class="bg-neutral-900/70 rounded-xl text-center shadow-sm border border-slate-800/60 p-4">
+                  <p class="text-2xl font-extrabold text-neutral-50">150+</p>
+                  <p class="text-xs  mt-1 text-neutral-500">Happy clients</p>
                 </div>
-                <div class="bg-white dark:bg-neutral-900/70 rounded-xl text-center shadow-sm border border-slate-200/70
-                    dark:border-slate-800/60 p-4">
-                  <p class="text-2xl font-extrabold text-gray-900 dark:text-neutral-50">12</p>
-                  <p class="text-xs text-gray-500 mt-1 dark:text-neutral-500">Design awards</p>
+                <div class="bg-neutral-900/70 rounded-xl text-center shadow-sm border border-slate-800/60 p-4">
+                  <p class="text-2xl font-extrabold text-neutral-50">5+</p>
+                  <p class="text-xs mt-1 text-neutral-500">Year Experience</p>
                 </div>
               </div>
               <div class="flex flex-wrap gap-2">
-                <span class="items-center bg-slate-100 dark:bg-neutral-800 text-gray-600 text-xs font-medium px-3 py-1.5
-                    rounded-full inline-flex border border-slate-200 dark:border-slate-700 dark:text-neutral-400">Product promoter</span>
-                <span class="items-center bg-slate-100 dark:bg-neutral-800 text-gray-600 text-xs font-medium px-3 py-1.5
-                    rounded-full inline-flex border border-slate-200 dark:border-slate-700 dark:text-neutral-400">Product desinger</span>
-                <span class="items-center bg-slate-100 dark:bg-neutral-800 text-gray-600 text-xs font-medium px-3 py-1.5
-                    rounded-full inline-flex border border-slate-200 dark:border-slate-700
-                    dark:text-neutral-400">Product listing expert</span>
-                <span class="items-center bg-slate-100 dark:bg-neutral-800 text-gray-600 text-xs font-medium px-3 py-1.5
-                    rounded-full inline-flex border border-slate-200 dark:border-slate-700 dark:text-neutral-400">Photo editor</span>
-                <span class="items-center bg-slate-100 dark:bg-neutral-800 text-gray-600 text-xs font-medium px-3 py-1.5
-                    rounded-full inline-flex border border-slate-200 dark:border-slate-700
-                    dark:text-neutral-400">Instagram post designer</span>
-                <span class="items-center bg-slate-100 dark:bg-neutral-800 text-gray-600 text-xs font-medium px-3 py-1.5
-                    rounded-full inline-flex border border-slate-200 dark:border-slate-700 dark:text-neutral-400">Facebook post designer</span>
-                <span class="items-center bg-slate-100 dark:bg-neutral-800 text-gray-600 text-xs font-medium px-3 py-1.5
-                    rounded-full inline-flex border border-slate-200 dark:border-slate-700 dark:text-neutral-400">Poster
-                    Designer</span>
-                <span class="items-center bg-slate-100 dark:bg-neutral-800 text-gray-600 text-xs font-medium px-3 py-1.5
-                    rounded-full inline-flex border border-slate-200 dark:border-slate-700 dark:text-neutral-400">Flyer desinger</span>
-                <span class="items-center bg-slate-100 dark:bg-neutral-800 text-gray-600 text-xs font-medium px-3 py-1.5
-                    rounded-full inline-flex border border-slate-200 dark:border-slate-700
-                    dark:text-neutral-400">Social media designer</span>
+                <span class="items-center bg-neutral-800 text-xs font-medium px-3 py-1.5
+                    rounded-full inline-flex border border-slate-700 text-neutral-400">Social Media Design</span>
+                <span class="items-center bg-neutral-800 text-xs font-medium px-3 py-1.5
+                    rounded-full inline-flex border border-slate-700 text-neutral-400">Branding & Visual Identity</span>
+                <span class="items-center bg-neutral-800 text-xs font-medium px-3 py-1.5
+                    rounded-full inline-flex border border-slate-700 text-neutral-400">Ads & Campaign</span>
+                <span class="items-center bg-neutral-800 text-xs font-medium px-3 py-1.5
+                    rounded-full inline-flex border border-slate-700 text-neutral-400">Instagram Posts</span>
+                
+                <span class="items-center bg-neutral-800 text-xs font-medium px-3 py-1.5
+                    rounded-full inline-flex border border-slate-700 text-neutral-400">Photo Editing</span>
                </div>
             </div>
           </div>
@@ -236,483 +268,356 @@
       </section>
 
 
-      <section class="px-6 py-40 md:py-40" id="reviews">
-              <div class="mx-auto max-w-[1024px]">
-                <div class="justify-center mb-6 flex">
-                  <span class="items-center bg-slate-50 dark:bg-slate-900/60 text-slate-700 text-sm font-medium px-4 py-1.5
-                      rounded-full shadow-sm inline-flex gap-2 border border-slate-200 dark:border-slate-700/60
-                      dark:text-slate-300">
-                          <span class="w-2 h-2 bg-slate-500 dark:bg-slate-400 rounded-full"></span>
-                          Reviews
-                    </span>
-                </div>
-                <div class="text-center mb-4">
-                  <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-neutral-50">Testimonials</h2>
-                </div>
-                <div class="text-center mb-12">
-                  <p class="text-lg text-gray-500 mx-auto dark:text-neutral-400 max-w-xl">Join thousands of freelancers, coaches, and indie founders who've transformed their client management.</p>
-                </div>
-                <div class="md:grid-cols-2 lg:grid-cols-3 grid grid-cols-1 gap-6">
-                  <div class="rounded-[18px] bg-white md:p-8 dark:bg-neutral-900 relative overflow-hidden border
-                      border-neutral-200 p-4 dark:border-neutral-800">
-                    <div class="mb-6 items-center flex gap-1">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_fQ-jtf2c_QQb">
-                        <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                      </svg>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_SRpS9Z2MvOsz">
-                        <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                      </svg>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_4s1dElOe5vq9">
-                        <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                      </svg>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_Bc7Cgs7zrTNh">
-                        <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                      </svg>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_qGRuN5Ofpz49">
-                        <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                      </svg>
-                    </div>
-                    <p lineheight="[24px]" class="mb-6 text-[15px] text-neutral-600 dark:text-neutral-400">Amazing graphics, really good quality for a great price.</p>
-                    <div class="items-center flex gap-3">
-                      <div>
-                        <div class="text-[14px] font-medium text-neutral-900 dark:text-neutral-100">hawklandcreate</div>
-                        <div class="text-[13px] text-neutral-600 dark:text-neutral-400">New Zealand</div>
-                      </div>
-                      <div class="h-10 w-10 rounded-full bg-neutral-300 dark:bg-neutral-700">
-                        <img alt="" src="https://devwares-pull-zone.b-cdn.net/mockimages/John%20Carter%20-%20Cirlce%20Small.png" class="rounded-full">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="rounded-[18px] bg-white md:p-8 dark:bg-neutral-900 relative overflow-hidden border
-                      border-neutral-200 p-4 dark:border-neutral-800">
-                    <div class="mb-6 items-center flex gap-1">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_jlvteGkO3vFC">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_tvXAgdM5ywl3">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_9xmt-VlywXld">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_FoLgsNF6QAev">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_QNjj7j-Xdk0B">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                    </div>
-                    <p lineheight="[24px]" class="mb-6 text-[15px] text-neutral-600 dark:text-neutral-400">He was very pro-active to make sure we were on the same page to getting what I need to get done even though I thought it was an easy project. He made sure I received a value product. Thank you.</p>
-                    <div class="items-center flex gap-3">
-                        <div>
-                          <div class="text-[14px] font-medium text-neutral-900 dark:text-neutral-100">newyouedition</div>
-                          <div class="text-[13px] text-neutral-600 dark:text-neutral-400">USA</div>
-                        </div>
-                        <div class="h-10 w-10 rounded-full bg-neutral-300 dark:bg-neutral-700">
-                          <img alt="" src="https://devwares-pull-zone.b-cdn.net/mockimages/Mike%20Warren%20-%20Circle%20Small.png" class="rounded-full">
-                        </div>
-                    </div>
-                  </div>
-                  <div class="rounded-[18px] bg-white md:p-8 dark:bg-neutral-900 relative overflow-hidden border
-                      border-neutral-200 p-4 dark:border-neutral-800">
-                    <div class="mb-6 items-center flex gap-1">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_-m_LEFOY-Bp2">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_wFGM-0OBNGeR">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_UGVz8Cso65qi">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_0iSvwSNz6QBJ">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_Q_4zqwF32FL3">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                    </div>
-                    <p lineheight="[24px]" class="mb-6 text-[15px] text-neutral-600 dark:text-neutral-400">Perfectly done job with great communicate.</p>
-                    <div class="items-center flex gap-3">
-                      <div>
-                        <div class="text-[14px] font-medium text-neutral-900 dark:text-neutral-100">krijger77</div>
-                        <div class="text-[13px] text-neutral-600 dark:text-neutral-400">Netherlands</div>
-                      </div>
-                      <div class="h-10 w-10 rounded-full bg-neutral-300 dark:bg-neutral-700">
-                        <img alt="" src="https://devwares-pull-zone.b-cdn.net/mockimages/Sophie%20Moore%20-%20Circle%20Small.png" class="rounded-full">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="rounded-[18px] bg-white md:p-8 dark:bg-neutral-900 relative overflow-hidden border
-                      border-neutral-200 p-4 dark:border-neutral-800">
-                    <div class="mb-6 items-center flex gap-1">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_ga9_UcpD7Ebz">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_lRgRIQN86Mfb">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_Ad8EDx9X_IiN">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_BQAJNUoqC5Wb">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_p1afgtvZ5-ou">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                    </div>
-                    <p lineheight="[24px]" class="mb-6 text-[15px] text-neutral-600 dark:text-neutral-400">I've tried every
-                        CRM out there. This is the only one built for people like me who work solo. No bloat, just features
-                        that matter.</p>
-                    <div class="items-center flex gap-3">
-                      <div>
-                        <div class="text-[14px] font-medium text-neutral-900 dark:text-neutral-100">Emma Watson</div>
-                        <div class="text-[13px] text-neutral-600 dark:text-neutral-400">Marketing Consultant</div>
-                      </div>
-                      <div class="h-10 w-10 rounded-full bg-neutral-300 dark:bg-neutral-700">
-                        <img alt="" src="https://devwares-pull-zone.b-cdn.net/mockimages/John%20Carter%20-%20Cirlce%20Small.png" class="rounded-full">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="rounded-[18px] bg-white md:p-8 dark:bg-neutral-900 relative overflow-hidden border
-                      border-neutral-200 p-4 dark:border-neutral-800">
-                    <div class="mb-6 items-center flex gap-1">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_3sZjv8szTOyy">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_GExEgFvCD2rN">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_CDjGHnaqzyc_">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_SADO2Ue0iPJ2">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_uncjtGJLvykB">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                    </div>
-                    <p lineheight="[24px]" class="mb-6 text-[15px] text-neutral-600 dark:text-neutral-400">The smart
-                        reminders have been incredible. I never miss a follow-up anymore, and my clients notice the
-                        difference. Highly recommend!</p>
-                    <div class="items-center flex gap-3">
-                      <div>
-                        <div class="text-[14px] font-medium text-neutral-900 dark:text-neutral-100">James Lee</div>
-                        <div class="text-[13px] text-neutral-600 dark:text-neutral-400">Content Creator</div>
-                      </div>
-                      <div class="h-10 w-10 rounded-full bg-neutral-300 dark:bg-neutral-700">
-                        <img alt="" src="https://devwares-pull-zone.b-cdn.net/mockimages/Mike%20Warren%20-%20Circle%20Small.png" class="rounded-full">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="rounded-[18px] bg-white md:p-8 dark:bg-neutral-900 relative overflow-hidden border
-                      border-neutral-200 p-4 dark:border-neutral-800">
-                    <div class="mb-6 items-center flex gap-1">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_3sZjv8szTOyy">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_GExEgFvCD2rN">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_CDjGHnaqzyc_">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_SADO2Ue0iPJ2">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-neutral-900 dark:text-neutral-100" id="Windframe_uncjtGJLvykB">
-                          <path d="M8 0l2.163 4.382 4.837.703-3.5 3.411.826 4.816L8 11.09l-4.326 2.223.826-4.816-3.5-3.411 4.837-.703L8 0z"></path>
-                        </svg>
-                    </div>
-                    <p lineheight="[24px]" class="mb-6 text-[15px] text-neutral-600 dark:text-neutral-400">Perfect for my
-                        coaching business. I can track all my clients, schedule sessions, and manage payments effortlessly.
-                        Worth every penny.</p>
-                    <div class="items-center flex gap-3">
-                      <div>
-                        <div class="text-[14px] font-medium text-neutral-900 dark:text-neutral-100">Lisa Park</div>
-                        <div class="text-[13px] text-neutral-600 dark:text-neutral-400">Life Coach</div>
-                      </div>
-                      <div class="h-10 w-10 rounded-full bg-neutral-300 dark:bg-neutral-700">
-                        <img alt="" src="https://devwares-pull-zone.b-cdn.net/mockimages/Sophie%20Moore%20-%20Circle%20Small.png" class="rounded-full">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-      </section>
-
-
-      <section class="bg-slate-50 dark:bg-neutral-900/50 py-24 px-4 sm:px-6 lg:px-8 border-y border-slate-200/70
-          dark:border-slate-800/60" id="posters">
+      <section class="px-6 py-38 md:py-38" id="posters">
         <div class="mx-auto max-w-5xl">
           <div class="justify-center mb-6 flex">
-            <span class="items-center bg-slate-50 dark:bg-slate-900/60 text-slate-700 text-sm font-medium px-4 py-1.5
-                rounded-full shadow-sm inline-flex gap-2 border border-slate-200 dark:border-slate-700/60
-                dark:text-slate-300">
-              <span class="w-2 h-2 bg-slate-500 dark:bg-slate-400 rounded-full"></span>
-              Selected works
+            <span class="items-center bg-slate-900/60 text-sm font-medium px-4 py-1.5
+                rounded-full shadow-sm inline-flex gap-2 border border-slate-700/60
+               text-slate-300">
+              <span class="w-2 h-2 bg-slate-400 rounded-full"></span>
+              Featured Projects
             </span>
           </div>
           <div class="text-center mb-4">
-            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-neutral-50">Posters</h2>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-50">Portfolio</h2>
           </div>
           <div class="text-center mb-12">
-            <p class="text-lg text-gray-500 mx-auto dark:text-neutral-400 max-w-xl">A curated selection of poster projects
-                spanning music, fashion, editorial, and brand campaigns.</p>
+            <p class="text-lg  mx-auto text-neutral-400 max-w-xl">Strategic branding and content design focused on growth, trust, and engagement.</p>
           </div>
           <div class="sm:grid-cols-2 lg:grid-cols-3 grid grid-cols-1 gap-6">
-            <div class="bg-white dark:bg-neutral-900/70 rounded-2xl shadow-lg shadow-slate-900/5 group border
-                border-slate-200/70 dark:border-slate-800/60 overflow-hidden dark:shadow-black/30 ring-1 ring-slate-200/50
-                dark:ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10">
-              <div class="aspect-[1/1] bg-slate-100 dark:bg-neutral-800 overflow-hidden">
-                <img alt="Midnight Festival Poster" src="src/img/(1).webp" class="object-cover
+            <div class="bg-neutral-900/70 rounded-2xl shadow-lg group border
+               border-slate-800/60 overflow-hidden shadow-black/30 ring-1 ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10 content content">
+              <div class="aspect-[1/1] bg-neutral-800 overflow-hidden">
+                <img alt="Midnight Festival Poster" src="https://i.imgur.com/XwK5Xwb.png" class="object-cover
+                    group-hover:scale-105 transition-transform duration-500 w-full h-full">
+              </div>              
+            </div>
+            <div class="bg-neutral-900/70 rounded-2xl shadow-lg  group border
+               border-slate-800/60 overflow-hidden shadow-black/30 ring-1 ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10 content">
+              <div class="aspect-[1/1] bg-neutral-800 overflow-hidden">
+                <img alt="Vogue Editorial Poster" src="https://i.imgur.com/7aqgOIx.png" class="object-cover
+                    group-hover:scale-105 transition-transform duration-500 w-full h-full">
+              </div>              
+            </div>
+            <div class="bg-neutral-900/70 rounded-2xl shadow-lg group border
+                border-slate-800/60 overflow-hidden shadow-black/30 ring-1  ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10 content">
+              <div class="aspect-[1/1] bg-neutral-800 overflow-hidden">
+                <img alt="Urban Collective Poster" src="https://i.imgur.com/9upORBv_d.webp?maxwidth=760&fidelity=grand" class="object-cover
                     group-hover:scale-105 transition-transform duration-500 w-full h-full">
               </div>
-              <div class="p-4">
-                <div class="items-center justify-between mb-1 flex">
-                  <h3 class="font-bold text-gray-900 text-sm dark:text-neutral-100">Midnight Festival</h3>
-                  <span class="text-xs bg-slate-100 dark:bg-neutral-800 text-gray-500 px-2 py-0.5 rounded-full border
-                      border-slate-200 dark:border-slate-700 dark:text-neutral-400">Music</span>
-                </div>
-                <p class="text-xs text-gray-400 dark:text-neutral-500">Event poster for annual music festival, NYC 2024</p>
-              </div>
             </div>
-            <div class="bg-white dark:bg-neutral-900/70 rounded-2xl shadow-lg shadow-slate-900/5 group border
-                border-slate-200/70 dark:border-slate-800/60 overflow-hidden dark:shadow-black/30 ring-1 ring-slate-200/50
-                dark:ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10">
-              <div class="aspect-[1/1] bg-slate-100 dark:bg-neutral-800 overflow-hidden">
-                <img alt="Vogue Editorial Poster" src="src/img/(2).webp" class="object-cover
+            <div class="bg-neutral-900/70 rounded-2xl shadow-lg group border
+                 border-slate-800/60 overflow-hidden shadow-black/30 ring-1  ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10 content">
+              <div class="aspect-[1/1] bg-neutral-800 overflow-hidden">
+                <img alt="Solstice Art Show Poster" src="https://i.imgur.com/I8vyg4q_d.webp?maxwidth=760&fidelity=grand" class="object-cover
                     group-hover:scale-105 transition-transform duration-500 w-full h-full">
               </div>
-              <div class="p-4">
-                <div class="items-center justify-between mb-1 flex">
-                  <h3 class="font-bold text-gray-900 text-sm dark:text-neutral-100">Vogue Editorial</h3>
-                  <span class="text-xs bg-slate-100 dark:bg-neutral-800 text-gray-500 px-2 py-0.5 rounded-full border
-                      border-slate-200 dark:border-slate-700 dark:text-neutral-400">Fashion</span>
-                </div>
-                <p class="text-xs text-gray-400 dark:text-neutral-500">Editorial campaign poster for a luxury fashion
-                    brand</p>
+            </div>
+            <div class="bg-neutral-900/70 rounded-2xl shadow-lg group border
+                 border-slate-800/60 overflow-hidden shadow-black/30 ring-1  ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10 content">
+              <div class="aspect-[1/1] bg-neutral-800 overflow-hidden">
+                <img alt="Neon Drift Poster" src="https://i.imgur.com/BgEds39.jpeg" class="object-cover group-hover:scale-105
+                   transition-transform duration-500 w-full h-full">
               </div>
             </div>
-            <div class="bg-white dark:bg-neutral-900/70 rounded-2xl shadow-lg shadow-slate-900/5 group border
-                border-slate-200/70 dark:border-slate-800/60 overflow-hidden dark:shadow-black/30 ring-1 ring-slate-200/50
-                dark:ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10">
-              <div class="aspect-[1/1] bg-slate-100 dark:bg-neutral-800 overflow-hidden">
-                <img alt="Urban Collective Poster" src="src/img/(3).webp" class="object-cover
-                    group-hover:scale-105 transition-transform duration-500 w-full h-full">
-              </div>
-              <div class="p-4">
-                <div class="items-center justify-between mb-1 flex">
-                  <h3 class="font-bold text-gray-900 text-sm dark:text-neutral-100">Urban Collective</h3>
-                  <span class="text-xs bg-slate-100 dark:bg-neutral-800 text-gray-500 px-2 py-0.5 rounded-full border
-                      border-slate-200 dark:border-slate-700 dark:text-neutral-400">Brand</span>
-                </div>
-                <p class="text-xs text-gray-400 dark:text-neutral-500">Brand launch poster series for streetwear label</p>
-              </div>
-            </div>
-            <div class="bg-white dark:bg-neutral-900/70 rounded-2xl shadow-lg shadow-slate-900/5 group border
-                border-slate-200/70 dark:border-slate-800/60 overflow-hidden dark:shadow-black/30 ring-1 ring-slate-200/50
-                dark:ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10">
-              <div class="aspect-[1/1] bg-slate-100 dark:bg-neutral-800 overflow-hidden">
-                <img alt="Solstice Art Show Poster" src="src/img/(4).webp" class="object-cover
-                    group-hover:scale-105 transition-transform duration-500 w-full h-full">
-              </div>
-              <div class="p-4">
-                <div class="items-center justify-between mb-1 flex">
-                  <h3 class="font-bold text-gray-900 text-sm dark:text-neutral-100">Solstice Art Show</h3>
-                  <span class="text-xs bg-slate-100 dark:bg-neutral-800 text-gray-500 px-2 py-0.5 rounded-full border
-                      border-slate-200 dark:border-slate-700 dark:text-neutral-400">Exhibition</span>
-                </div>
-                <p class="text-xs text-gray-400 dark:text-neutral-500">Contemporary art gallery show promotional poster</p>
-              </div>
-            </div>
-            <div class="bg-white dark:bg-neutral-900/70 rounded-2xl shadow-lg shadow-slate-900/5 group border
-                border-slate-200/70 dark:border-slate-800/60 overflow-hidden dark:shadow-black/30 ring-1 ring-slate-200/50
-                dark:ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10">
-              <div class="aspect-[1/1] bg-slate-100 dark:bg-neutral-800 overflow-hidden">
-                <img alt="Neon Drift Poster" src="src/img/(5).jpg" class="object-cover group-hover:scale-105
-                    transition-transform duration-500 w-full h-full">
-              </div>
-              <div class="p-4">
-                <div class="items-center justify-between mb-1 flex">
-                  <h3 class="font-bold text-gray-900 text-sm dark:text-neutral-100">Neon Drift</h3>
-                  <span class="text-xs bg-slate-100 dark:bg-neutral-800 text-gray-500 px-2 py-0.5 rounded-full border
-                      border-slate-200 dark:border-slate-700 dark:text-neutral-400">Music</span>
-                </div>
-                <p class="text-xs text-gray-400 dark:text-neutral-500">Album release poster for independent electronic
-                    artist</p>
-              </div>
-            </div>
-            <div class="bg-white dark:bg-neutral-900/70 rounded-2xl shadow-lg shadow-slate-900/5 group border
-                border-slate-200/70 dark:border-slate-800/60 overflow-hidden dark:shadow-black/30 ring-1 ring-slate-200/50
-                dark:ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10">
-              <div class="aspect-[1/1] bg-slate-100 dark:bg-neutral-800 overflow-hidden">
-                <img alt="Forma Studio Poster" src="src/img/(1).png" class="object-cover group-hover:scale-105
-                    transition-transform duration-500 w-full h-full">
-              </div>
-              <div class="p-4">
-                <div class="items-center justify-between mb-1 flex">
-                  <h3 class="font-bold text-gray-900 text-sm dark:text-neutral-100">Forma Studio</h3>
-                  <span class="text-xs bg-slate-100 dark:bg-neutral-800 text-gray-500 px-2 py-0.5 rounded-full border
-                      border-slate-200 dark:border-slate-700 dark:text-neutral-400">Architecture</span>
-                </div>
-                <p class="text-xs text-gray-400 dark:text-neutral-500">Annual architecture studio open house campaign</p>
+            <div class="bg-neutral-900/70 rounded-2xl shadow-lg group border
+                 border-slate-800/60 overflow-hidden shadow-black/30 ring-1  ring-slate-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-slate-900/10 content">
+              <div class="aspect-[1/1] bg-neutral-800 overflow-hidden">
+                <img alt="Forma Studio Poster" src="https://i.imgur.com/MWy3XOF.jpeg" class="object-cover group-hover:scale-105
+                   transition-transform duration-500 w-full h-full">
               </div>
             </div>
           </div>
         </div>
       </section>
-   
       
-      <section class="bg-white dark:bg-neutral-950 py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden px-6 py-40 md:py-40 relative from-neutral-50 via-white to-neutral-100
-              dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" id="pricing">
+
+      <section class=" bg-neutral-900/50 py-38 px-4 sm:px-6 lg:px-8 border-y border-slate-800/60" id="reviews">
+        <div style="max-width: 1024px; margin: 0 auto;">
+          <div class="justify-center mb-6 flex">
+            <span class="items-center bg-slate-900/60 text-sm font-medium px-4 py-1.5
+                rounded-full shadow-sm inline-flex gap-2 border border-slate-700/60
+               text-slate-300">
+              <span class="w-2 h-2 bg-slate-400 rounded-full"></span>
+              Client Feedbacks
+            </span>
+          </div>
+          <div class="text-center mb-4">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-50">Success Stories</h2>
+          </div>
+          <div class="text-center mb-12">
+            <p class="text-lg mx-auto text-neutral-400 max-w-xl">Trusted by businesses worldwide for high-quality social media design and consistent branding.</p>
+          </div>
+
+          <!-- Carousel outer -->
+          <div style="position: relative; overflow: hidden; touch-action: pan-y;" id="rev-outer">
+            <div id="rev-track" style="display: flex; gap: 20px; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);">
+
+              <!-- Card 1 -->
+              <div class="rounded-[18px] rev-card  md:p-8 bg-neutral-900 relative overflow-hidden border
+                        p-4 transition-all border-neutral-800
+                        hover:border-neutral-700 text-neutral-300">
+                <div class="rev-stars text-neutral-300">★★★★★</div>
+                <p class="rev-text text-neutral-300">Amazing graphics, really good quality for a great price.</p>
+                <div class="rev-author text-neutral-300">
+                  <img src="https://devwares-pull-zone.b-cdn.net/mockimages/John%20Carter%20-%20Cirlce%20Small.png" class="rev-avatar" alt="">
+                  <div>
+                    <div class="rev-name text-neutral-300">hawklandcreate</div>
+                    <div class="rev-loc text-neutral-300">New Zealand</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="rounded-[18px] rev-card text-neutral-300 md:p-8 bg-neutral-900 relative overflow-hidden border
+                         p-4 transition-all border-neutral-800
+                        hover:border-neutral-700">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">He was very pro-active to make sure we were on the same page to getting what I need done. He made sure I received a value product. Thank you.</p>
+                <div class="rev-author">
+                  <img src="https://devwares-pull-zone.b-cdn.net/mockimages/Mike%20Warren%20-%20Circle%20Small.png" class="rev-avatar" alt="">
+                  <div>
+                    <div class="rev-name">newyouedition</div>
+                    <div class="rev-loc">USA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="rounded-[18px] rev-card text-neutral-300 md:p-8 bg-neutral-900 relative overflow-hidden border
+                         p-4 transition-all border-neutral-800
+                        hover:border-neutral-700">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">Perfectly done job with great communication.</p>
+                <div class="rev-author">
+                  <img src="https://devwares-pull-zone.b-cdn.net/mockimages/Sophie%20Moore%20-%20Circle%20Small.png" class="rev-avatar" alt="">
+                  <div>
+                    <div class="rev-name">krijger77</div>
+                    <div class="rev-loc">Netherlands</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="rev-card md:p-8 text-neutral-900 relative overflow-hidden border
+                         p-4 transition-all border-neutral-800
+                        hover:border-neutral-700">
+                <div class="rounded-[18px] rev-stars">★★★★★</div>
+                <p class="rev-text">I've tried every CRM out there. This is the only one built for people like me who work solo. No bloat, just features that matter.</p>
+                <div class="rev-author">
+                  <img src="https://devwares-pull-zone.b-cdn.net/mockimages/John%20Carter%20-%20Cirlce%20Small.png" class="rev-avatar" alt="">
+                  <div>
+                    <div class="rev-name">Emma Watson</div>
+                    <div class="rev-loc">Marketing Consultant</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="rounded-[18px] rev-card text-neutral-300 md:p-8 bg-neutral-900 relative overflow-hidden border
+                       p-4 transition-all border-neutral-800
+                       hover:border-neutral-700">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">The smart reminders have been incredible. I never miss a follow-up anymore, and my clients notice the difference. Highly recommend!</p>
+                <div class="rev-author">
+                  <img src="https://devwares-pull-zone.b-cdn.net/mockimages/Mike%20Warren%20-%20Circle%20Small.png" class="rev-avatar" alt="">
+                  <div>
+                    <div class="rev-name">James Lee</div>
+                    <div class="rev-loc">Content Creator</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="rounded-[18px] rev-card text-neutral-300 md:p-8 -neutral-900 relative overflow-hidden border
+                         p-4 transition-all hover:border-neutral-300 border-neutral-800
+                        hover:border-neutral-700">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">Perfect for my coaching business. I can track all my clients, schedule sessions, and manage payments effortlessly. Worth every penny.</p>
+                <div class="rev-author">
+                  <img src="https://devwares-pull-zone.b-cdn.net/mockimages/Sophie%20Moore%20-%20Circle%20Small.png" class="rev-avatar" alt="">
+                  <div>
+                    <div class="rev-name">Lisa Park</div>
+                    <div class="rev-loc">Life Coach</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 32px;">
+            <button id="rev-prev" onclick="revMove(-1)" style="width: 38px; height: 38px; border-radius: 50%;
+               border: 1px solid #d1d5db; background: #fff; color:#000;font-size: 18px;
+                display: flex; align-items: center; justify-content: center;
+               transition: 1s ease;" class=" text-neutral-300">&#8592;</button>
+            <div id="rev-dots"  style="display: flex; gap: 7px;">
+                <button class=" text-neutral-300 md:p-8 bg-neutral-900 relative overflow-hidden border
+                       p-4 transition-all border-neutral-800
+                      hover:border-neutral-700"></button>
+                <button class=" text-neutral-300 md:p-8 bg-neutral-900 relative overflow-hidden border
+                         p-4 transition-all border-neutral-800
+                        hover:border-neutral-700"></button>
+                  
+            </div>
+            <button id="rev-next" onclick="revMove(1)" style="width: 38px; height: 38px; border-radius: 50%;
+               border: 1px solid #d1d5db; background: #fff; color:#000;cursor: pointer; font-size: 18px;
+                display: flex; align-items: center; justify-content: center; transition: 1s ease;" class=" text-neutral-300">&#8594;</button>
+          </div>
+
+        </div>
+      </section>
+
+      
+      <section class=" bg-neutral-950 py-38 px-4 sm:px-6 lg:px-8 relative overflow-hidden px-6 py-38 md:py-38 relative 
+              from-neutral-950 via-neutral-900 to-neutral-950 pricing" id="pricing">
             <div class="mx-auto max-w-[1024px]">
               <div class="mb-16">
                 <div class="justify-center mb-6 flex">
-                    <span class="items-center bg-slate-50 dark:bg-slate-900/60 text-slate-700 text-sm font-medium px-4 py-1.5
-                        rounded-full shadow-sm inline-flex gap-2 border border-slate-200 dark:border-slate-700/60
-                        dark:text-slate-300">
-                            <span class="w-2 h-2 bg-slate-500 dark:bg-slate-400 rounded-full"></span>
-                            Simple Pricing
+                    <span class="items-center bg-slate-900/60 text-sm font-medium px-4 py-1.5
+                        rounded-full shadow-sm inline-flex gap-2 border border-slate-700/60
+                       text-slate-300">
+                            <span class="w-2 h-2 bg-slate-400 rounded-full"></span>
+                            Packages
                       </span>
                 </div>
                 <div class="text-center mb-4">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-neutral-50">Choose your plan</h2>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-50">What I Offer</h2>
                 </div>
                 <div class="text-center mb-12">
-                    <p class="text-lg text-gray-500 mx-auto dark:text-neutral-400 max-w-xl">Start free and scale as you grow. All plans include a 14-day free trial. No credit card required.</p>
+                    <p class="text-lg mx-auto text-neutral-400 max-w-xl">Comprehensive solutions to grow your brand online </p>
+                    <p class="text-lg mx-auto text-neutral-400 max-w-xl">from eye-catching designs to strategic marketing.</p>
                 </div>
                 <div class="md:grid-cols-3 grid grid-cols-1 gap-8">
-                    <div class="rounded-[18px] bg-white md:p-8 dark:bg-neutral-900 relative overflow-hidden border
-                        border-neutral-200 p-4 transition-all hover:border-neutral-300 dark:border-neutral-800
-                        dark:hover:border-neutral-700">
-                        <div class="mb-8">
-                          <p class="mb-2 text-[24px] font-medium text-neutral-900 dark:text-neutral-100">BASIC</p>
-                          <p class="text-[15px] text-neutral-600 dark:text-neutral-400">Sample</p>
+                    <div class="rounded-[18px] md:p-8 bg-neutral-900 relative overflow-hidden border
+                         p-4 transition-all border-neutral-800
+                        hover:border-neutral-700">
+                        <div class="mb-5 package-title">
+                          <p class="mb-1 text-[24px] font-medium text-neutral-100">Basic Plan</p>
+                          <p class="text-[15px] text-neutral-400">Stay active & look professional</p>
                         </div>
-                        <div class="mb-8">
+                        <div class="mb-5">
                           <div class="items-baseline flex gap-1">
-                            <span class="text-[48px] font-medium tracking-[-0.02em] text-neutral-900
-                                dark:text-neutral-100">$5</span>
-                            <span class="text-[17px] text-neutral-600 dark:text-neutral-400">/total</span>
+                            <span class="text-[30px] font-medium tracking-[-0.02em] text-neutral-100">$100-150</span>
+                            <span class="text-[17px] text-neutral-400">/monthly</span>
                           </div>
                         </div>
-                        <button type="submit" class="flex border border-neutral-300 transition-all hover:bg-neutral-50
-                            dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-800 mb-8 h-11 w-full items-center
-                            justify-center rounded-lg bg-white px-4 text-[15px] font-medium text-neutral-900
-                            dark:bg-neutral-900">SELECT</button>
                         <div class="space-y-4">
                           <div class="items-start flex gap-3">
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_qUfFgs70t9J0"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                              <span class="text-[15px] text-neutral-700 dark:text-neutral-300">1 sample post design</span>
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
+                              <span class="text-[15px] text-neutral-300">8 posts/month</span>
                           </div>
                           <div class="items-start flex gap-3">
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_V2j9W9nv7IOS"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                              <span class="text-[15px] text-neutral-700 dark:text-neutral-300">3 Revisions</span>
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_V2j9W9nv7IOS"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
+                              <span class="text-[15px] text-neutral-300">Posted on Facebook or Instagram</span>
                           </div>
                           <div class="items-start flex gap-3">
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_zimPAQ78FiuS"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                              <span class="text-[15px] text-neutral-700 dark:text-neutral-300">Delivery time- 1 day</span>
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_zimPAQ78FiuS"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
+                              <span class="text-[15px] text-neutral-300">Clean, consistent branding</span>
                           </div>
                           <div class="items-start flex gap-3">
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_zimPAQ78FiuS"></svg><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                              <span class="text-[15px] text-neutral-700 dark:text-neutral-300">Include source file</span>
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_zimPAQ78FiuS"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
+                              <span class="text-[15px] text-neutral-300">Basic hashtags</span>
                           </div>
                         </div>
                     </div>
-                      
-                    <div class="rounded-[18px] bg-white shadow-lg md:p-8 dark:bg-neutral-900 relative overflow-hidden border-2
-                          border-neutral-900 p-4 dark:border-neutral-100">
-                        <div class="rounded-full bg-neutral-900 px-3 py-1 text-[12px] font-medium text-white dark:bg-neutral-100
-                            absolute top-4 right-4 dark:text-neutral-900">Popular</div>
-                        <div class="mb-8">
-                          <p class="mb-2 text-[24px] font-medium text-neutral-900 dark:text-neutral-100">STANDARD</p>
-                          <p class="text-[15px] text-neutral-600 dark:text-neutral-400">Half Month of Designs</p>
+                    <div class="rounded-[18px] shadow-lg md:p-8 bg-neutral-900 relative overflow-hidden border-2
+                           p-4 border-neutral-100">
+                        <div class="rounded-full bg-neutral-900 px-3 py-1 text-[12px] font-medium bg-neutral-100
+                            absolute top-4 right-4 text-neutral-900">Popular</div>
+                        <div class="mb-5 package-title">
+                          <p class="mb-1 text-[24px] font-medium text-neutral-100">STANDARD</p>
+                          <p class="text-[15px] text-neutral-400">More engagement & client inquiries</p>
                         </div>
-                        <div class="mb-8">
+                        <div class="mb-5">
                           <div class="items-baseline flex gap-1">
-                            <span class="text-[48px] font-medium tracking-[-0.02em] text-neutral-900
-                                dark:text-neutral-100">$60</span>
-                            <span class="text-[17px] text-neutral-600 dark:text-neutral-400">/total</span>
+                            <span class="text-[30px] font-medium tracking-[-0.02em] text-neutral-100">$250-300</span>
+                            <span class="text-[17px] text-neutral-400">/monthly</span>
                           </div>
                         </div>
-                        <button type="submit" class="flex transition-all hover:bg-neutral-800 dark:text-neutral-900
-                            dark:hover:bg-neutral-200 mb-8 h-11 w-full items-center justify-center rounded-lg bg-neutral-900 px-4
-                            text-[15px] font-medium text-white dark:bg-neutral-100">SELECT</button>
                         <div class="space-y-4">
                           <div class="items-start flex gap-3">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_qUfFgs70t9J0">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0">
                                 <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
-                              </svg>
-                                        <span class="text-[15px] text-neutral-700 dark:text-neutral-300">10 posts design</span>
-                                      </div>
-                                      <div class="items-start flex gap-3">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_V2j9W9nv7IOS">
-                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
-                              </svg>
-                                        <span class="text-[15px] text-neutral-700 dark:text-neutral-300">5 Revisions</span>
-                                      </div>
-                                      <div class="items-start flex gap-3">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_zimPAQ78FiuS">
-                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
-                              </svg>
-                            <span class="text-[15px] text-neutral-700 dark:text-neutral-300">Delivery time- 7 days</span>
+                            </svg>
+                            <span class="text-[15px] text-neutral-300">12-15 posts/month</span>
                           </div>
                           <div class="items-start flex gap-3">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_zimPAQ78FiuS">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0">
                                 <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
-                              </svg>
-                            <span class="text-[15px] text-neutral-700 dark:text-neutral-300">Delivery time- 3 days [30$+]</span>
+                            </svg>
+                            <span class="text-[15px] text-neutral-300">Facebook & Instagram management</span>
                           </div>
                           <div class="items-start flex gap-3">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_zimPAQ78FiuS">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0">
                                 <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
-                              </svg>
-                            <span class="text-[15px] text-neutral-700 dark:text-neutral-300">Include source file</span>
+                            </svg>
+                            <span class="text-[15px] text-neutral-300">Captions + hashtag strategy</span>
+                          </div>                        
+                          <div class="items-start flex gap-3">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0">
+                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                            </svg>
+                            <span class="text-[15px] text-neutral-300">2 educational posts</span>
                           </div>
+                          <div class="items-start flex gap-3">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0">
+                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                            </svg>
+                            <span class="text-[15px] text-neutral-300">1 Meta Ad campaign</span>
+                          </div>                          
                         </div>
                     </div>
-                    <div class="rounded-[18px] bg-white md:p-8 dark:bg-neutral-900 relative overflow-hidden border
-                        border-neutral-200 p-4 transition-all hover:border-neutral-300 dark:border-neutral-800
-                        dark:hover:border-neutral-700">
-                        <div class="mb-8">
-                            <p class="mb-2 text-[24px] font-medium text-neutral-900 dark:text-neutral-100">PREMIUM</p>
-                            <p class="text-[15px] text-neutral-600 dark:text-neutral-400">Full Month of Designs (Save 20$)</p>
+                    <div class="rounded-[18px] md:p-8 bg-neutral-900 relative overflow-hidden border
+                        p-4 transition-all border-neutral-800 hover:border-neutral-700">
+                        <div class="mb-5 package-title">
+                            <p class="mb-1 text-[24px] font-medium text-neutral-100">PREMIUM</p>
+                            <p class="text-[15px] text-neutral-400">Full management & faster growth</p>
                         </div>
-                        <div class="mb-8">
+                        <div class="mb-5">
                             <div class="items-baseline flex gap-1">
-                              <span class="text-[48px] font-medium tracking-[-0.02em] text-neutral-900
-                                  dark:text-neutral-100">$100</span>
-                              <span class="text-[17px] text-neutral-600 dark:text-neutral-400">/total</span>
+                              <span class="text-[30px] font-medium tracking-[-0.02em] text-neutral-100">$500-600</span>
+                              <span class="text-[17px] text-neutral-400">/monthly</span>
                             </div>
                         </div>
-                        <button type="submit" class="flex border border-neutral-300 transition-all hover:bg-neutral-50
-                              dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-800 mb-8 h-11 w-full items-center
-                              justify-center rounded-lg bg-white px-4 text-[15px] font-medium text-neutral-900
-                              dark:bg-neutral-900">SELECT</button>
                         <div class="space-y-4">
-                            <div class="items-start flex gap-3">
-                                  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_qUfFgs70t9J0"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                                  <span class="text-[15px] text-neutral-700 dark:text-neutral-300">20+1 posts design</span>
-                            </div>
-                            <div class="items-start flex gap-3">
-                                  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_V2j9W9nv7IOS"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                                  <span class="text-[15px] text-neutral-700 dark:text-neutral-300">9 Revisions</span>
-                            </div>
-                            <div class="items-start flex gap-3">
-                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_zimPAQ78FiuS"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                                 <span class="text-[15px] text-neutral-700 dark:text-neutral-300">Delivery time- 10 days</span>
-                            </div>
-                            <div class="items-start flex gap-3">
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_zimPAQ78FiuS"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                              <span class="text-[15px] text-neutral-700 dark:text-neutral-300">Delivery time- 3 days [50$+]</span>
-                            </div>
-                            <div class="items-start flex gap-3">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 text-neutral-900 flex-shrink-0 dark:text-neutral-100" id="Windframe_zimPAQ78FiuS"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                                <span class="text-[15px] text-neutral-700 dark:text-neutral-300">Include source file</span>
-                            </div>
+                          <div class="items-start flex gap-3">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0">
+                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                            </svg>
+                            <span class="text-[15px] text-neutral-300">20 posts/month & story designs</span>
+                          </div>
+                          <div class="items-start flex gap-3">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0">
+                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                            </svg>
+                            <span class="text-[15px] text-neutral-300">Full content planning</span>
+                          </div>
+                          <div class="items-start flex gap-3">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0">
+                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                            </svg>
+                            <span class="text-[15px] text-neutral-300">Posting & page management</span>
+                          </div>
+                          <div class="items-start flex gap-3">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0">
+                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                            </svg>
+                            <span class="text-[15px] text-neutral-300">Basic reply to comments/messages</span>
+                          </div>
+                          <div class="items-start flex gap-3">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0">
+                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                            </svg>
+                            <span class="text-[15px] text-neutral-300">2-3 Meta Ad campaigns</span>
+                          </div>
+                          <div class="items-start flex gap-3">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 t flex-shrink-0 text-neutral-100" id="Windframe_qUfFgs70t9J0">
+                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                            </svg>
+                            <span class="text-[15px] text-neutral-300">Audience targeting</span>
+                          </div>  
                         </div>
                     </div>
                 </div>
@@ -721,130 +626,115 @@
       </section>
 
 
-      <section class="bg-slate-50 dark:bg-neutral-900/50 py-24 px-4 sm:px-6 lg:px-8 border-y border-slate-200/70
-          dark:border-slate-800/60" id="contact">
+      <section class="bg-neutral-900/50 py-38 px-4 sm:px-6 lg:px-8 border-y border-slate-800/60" id="contact">
           <div class="mx-auto max-w-5xl">
                <div class="justify-center mb-6 flex">
-                  <span class="items-center bg-slate-50 dark:bg-slate-900/60 text-slate-700 text-sm font-medium px-4 py-1.5
-                      rounded-full shadow-sm inline-flex gap-2 border border-slate-200 dark:border-slate-700/60
-                      dark:text-slate-300">
-                      <span class="w-2 h-2 bg-slate-500 dark:bg-slate-400 rounded-full animate-pulse"></span>
-                      Let's work together
+                  <span class="items-center bg-slate-900/60 text-sm font-medium px-4 py-1.5
+                      rounded-full shadow-sm inline-flex gap-2 border border-slate-700/60
+                     text-slate-300">
+                      <span class="w-2 h-2 bg-slate-400 rounded-full animate-pulse"></span>
+                      Get In Touch
                   </span>
                </div>
                <div class="text-center mb-4">
-                  <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-neutral-50">Start your
+                  <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-50">Start your
                       project</h2>
                </div>
                <div class="text-center mb-12">
-                      <p class="text-lg text-gray-500 mx-auto dark:text-neutral-400 max-w-xl">Have a project in mind? Send me a
-                          message and I'll get back to you within 24 hours.</p>
+                      <p class="text-lg  mx-auto text-neutral-400 max-w-xl">Have a project in mind? Send me a message.</p>
                </div>
                <div class="lg:grid-cols-5 grid grid-cols-1 gap-10">
-                  <div class="lg:col-span-3 bg-white dark:bg-neutral-900/70 rounded-2xl shadow-lg shadow-slate-900/5 border
-                      border-slate-200/70 dark:border-slate-800/60 dark:shadow-black/30 ring-1 ring-slate-200/50
-                      dark:ring-slate-700/50 p-8">
-                      <form class="space-y-5">
-                          <div class="sm:grid-cols-2 grid grid-cols-1 gap-5">
+                  <div class="lg:col-span-3 bg-neutral-900/70 rounded-2xl shadow-lg border
+                     border-slate-800/60 shadow-black/30 ring-1 ring-slate-700/50 p-8">
+                      <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="024b828a-32f0-4f77-8ea7-3210927e52eb">
+                        <div class="sm:grid-cols-2 grid grid-cols-1 gap-5 mb-5">
                             <div>
-                              <label class="text-sm font-semibold text-gray-700 mb-1.5 block dark:text-neutral-300">First name</label>
-                              <input type="text" placeholder="Elena" class="border border-slate-200 dark:border-slate-700
-                                  dark:text-neutral-100 placeholder-gray-400 dark:placeholder-neutral-500 focus:outline-none
-                                  focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 transition-all w-full bg-slate-50
-                                  dark:bg-neutral-800 rounded-xl px-4 py-2.5 text-sm text-gray-900">
+                              <label class="text-sm font-semibold mb-1.5 block text-neutral-300">First name</label>
+                              <input type="text" id="name" name="name" placeholder="Elena" required  class="border border-slate-700
+                                 text-neutral-100 placeholder-neutral-500 focus:outline-none
+                                  focus:ring-2 focus:ring-slate-500 transition-all w-full bg-neutral-800 rounded-xl px-4 py-2.5 text-sm">           
                             </div>
+                                        
                             <div>
-                              <label class="text-sm font-semibold text-gray-700 mb-1.5 block dark:text-neutral-300">Last name</label>
-                              <input type="text" placeholder="Vasquez" class="border border-slate-200 dark:border-slate-700
-                                  dark:text-neutral-100 placeholder-gray-400 dark:placeholder-neutral-500 focus:outline-none
-                                  focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 transition-all w-full bg-slate-50
-                                  dark:bg-neutral-800 rounded-xl px-4 py-2.5 text-sm text-gray-900">
+                              <label class="text-sm font-semibold mb-1.5 block text-neutral-300">Last name</label>
+                              <input type="text" id="name"required name="name" placeholder="Vasquez" class="border border-slate-700
+                                 text-neutral-100 placeholder-neutral-500 focus:outline-none
+                                  focus:ring-2 focus:ring-slate-500 transition-all w-full bg-neutral-800 rounded-xl px-4 py-2.5 text-sm">
                             </div>
                           </div>
-                          <div>
-                            <label class="text-sm font-semibold text-gray-700 mb-1.5 block dark:text-neutral-300">Email
-                                address</label>
-                            <input type="email" placeholder="you@company.com" class="border border-slate-200 dark:border-slate-700
-                                dark:text-neutral-100 placeholder-gray-400 dark:placeholder-neutral-500 focus:outline-none
-                                focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 transition-all w-full bg-slate-50
-                                dark:bg-neutral-800 rounded-xl px-4 py-2.5 text-sm text-gray-900">
-                          </div>
-                          <div>
-                            <label class="text-sm font-semibold text-gray-700 mb-1.5 block dark:text-neutral-300">Tell me about your
-                                project</label>
-                            <textarea rows="4" type="textarea" placeholder="Describe your project, goals, and any relevant details..." class="w-full bg-slate-50 dark:bg-neutral-800 rounded-xl px-4 py-2.5 text-sm text-gray-900 border
-                                border-slate-200 dark:border-slate-700 dark:text-neutral-100 placeholder-gray-400
-                                dark:placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-slate-400
-                                dark:focus:ring-slate-500 transition-all resize-none"></textarea>
-                          </div>
-                          <button type="submit" class="inline-flex gap-2 hover:bg-slate-700 dark:hover:bg-white dark:text-slate-900
-                              dark:shadow-slate-200/10 transition-all duration-200 items-center justify-center bg-slate-800
-                              dark:bg-slate-200 text-white font-semibold text-sm px-8 py-3.5 rounded-xl shadow-lg shadow-slate-800/20
-                              w-full">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_FdzJeUIT7">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                            </svg>
-                            Send message
-                          </button>
+                        <label class="text-sm font-semibold mb-1.5 block text-neutral-300">Your Email</label>
+                        <input type="email" name="email" placeholder="Your Email" class="border border-slate-700
+                                              text-neutral-100 placeholder-neutral-500 focus:outline-none mb-5
+                                                focus:ring-2 focus:ring-slate-500 transition-all w-full bg-neutral-800 rounded-xl px-4 py-2.5 text-sm " required>
+                        <label class="text-sm font-semibold mb-1.5 block text-neutral-300">Tell me about your
+                                project</label>                                               
+                        <textarea rows="4"  name="message" placeholder="Your Message" class="w-full bg-neutral-800 rounded-xl px-4 py-2.5 text-sm border
+                                              border-slate-700 text-neutral-100 mb-5 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-slate-500 transition-all resize-none" required></textarea>
+                        <button type="submit" class="inline-flex gap-2 hover:bg-white text-slate-900
+                                              shadow-slate-200/10 transition-all duration-200 items-center justify-center bg-slate-200 font-semibold text-sm px-8 py-3.5 rounded-xl shadow-lg 
+                                              w-full">Submit</button>
                       </form>
                   </div>
                   <div class="lg:col-span-2 flex flex-col gap-5">
-                      <div class="bg-slate-50 dark:bg-neutral-900/70 rounded-2xl shadow-sm border border-slate-200/70
-                          dark:border-slate-800/60 p-6">
+                      <div class=" bg-neutral-900/70 rounded-2xl shadow-sm border border-slate-800/60 p-6">
                         <div class="items-start flex gap-4">
-                          <div class="w-10 h-10 bg-slate-800 dark:bg-slate-200 rounded-xl items-center justify-center flex
+                          <div class="w-10 h-10 bg-slate-200 rounded-xl items-center justify-center flex
                               flex-shrink-0">
-                            <svg class="w-5 h-5 text-white dark:text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_hcnVuqxZS">
+                            <svg class="w-5 h-5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_hcnVuqxZS">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                           </div>
                           <div>
-                            <p class="text-sm font-bold text-gray-900 mb-0.5 dark:text-neutral-100">Email</p>
-                            <p class="text-sm text-gray-500 dark:text-neutral-400">barshonsaha41@gmail.com</p>
+                            <p class="text-sm font-bold  mb-0.5 text-neutral-100">Email</p>
+                            <p class="text-sm text-neutral-400"><a class="fiverr" href="mailto:barshonsaha41@gmail.com?subject=Hello" target="_blank">barshonsaha41@gmail.com</a></p>
                           </div>
                         </div>
                       </div>
-                      <div class="bg-slate-50 dark:bg-neutral-900/70 rounded-2xl shadow-sm border border-slate-200/70
-                          dark:border-slate-800/60 p-6">
+                      <div class=" bg-neutral-900/70 rounded-2xl shadow-sm border border-slate-800/60 p-6">
                         <div class="items-start flex gap-4">
-                          <div class="w-10 h-10 bg-slate-800 dark:bg-slate-200 rounded-xl items-center justify-center flex
+                          <div class="w-10 h-10 bg-slate-200 rounded-xl items-center justify-center flex
                               flex-shrink-0">
-                            <svg class="w-5 h-5 text-white dark:text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_35AnMRRUN">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <svg class="w-5 h-5 text-slate-900" stroke-width="0px" fill="var(--icon-fill)" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                              <g id="SVGRepo_iconCarrier"> 
+                                <path d="M6.014 8.00613C6.12827 7.1024 7.30277 5.87414 8.23488 6.01043L8.23339 6.00894C9.14051 6.18132 9.85859 7.74261 10.2635 8.44465C10.5504 8.95402 10.3641 9.4701 10.0965 9.68787C9.7355 9.97883 9.17099 10.3803 9.28943 10.7834C9.5 11.5 12 14 13.2296 14.7107C13.695 14.9797 14.0325 14.2702 14.3207 13.9067C14.5301 13.6271 15.0466 13.46 15.5548 13.736C16.3138 14.178 17.0288 14.6917 17.69 15.27C18.0202 15.546 18.0977 15.9539 17.8689 16.385C17.4659 17.1443 16.3003 18.1456 15.4542 17.9421C13.9764 17.5868 8 15.27 6.08033 8.55801C5.97237 8.24048 5.99955 8.12044 6.014 8.00613Z" fill="#0F0F0F"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C10.7764 23 10.0994 22.8687 9 22.5L6.89443 23.5528C5.56462 24.2177 4 23.2507 4 21.7639V19.5C1.84655 17.492 1 15.1767 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM6 18.6303L5.36395 18.0372C3.69087 16.4772 3 14.7331 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C11.0143 21 10.552 20.911 9.63595 20.6038L8.84847 20.3397L6 21.7639V18.6303Z" fill="#0F0F0F"></path> 
+                              </g>
                             </svg>
                           </div>
                           <div>
-                            <p class="text-sm font-bold text-gray-900 mb-0.5 dark:text-neutral-100">Location</p>
-                            <p class="text-sm text-gray-500 dark:text-neutral-400">Dhaka, Bangladesh — Remote worldwide</p>
+                            <p class="text-sm font-bold mb-0.5 text-neutral-100">Whatsapp</p>
+                            <p class="text-sm text-neutral-400"><a class="fiverr" href="https://wa.me/8801790795848?text=Hi%20I%20found%20you%20online" target="_blank">+880 1790 795848</a></p>
                           </div>
                         </div>
                       </div>
-                      <div class="bg-slate-50 dark:bg-neutral-900/70 rounded-2xl shadow-sm border border-slate-200/70
-                          dark:border-slate-800/60 p-6">
+                      <div class=" bg-neutral-900/70 rounded-2xl shadow-sm border-slate-800/60 p-6">
                         <div class="items-start flex gap-4">
-                          <div class="w-10 h-10 bg-slate-800 dark:bg-slate-200 rounded-xl items-center justify-center flex
+                          <div class="w-10 h-10 bg-slate-200 rounded-xl items-center justify-center flex
                               flex-shrink-0">
-                            <svg class="w-5 h-5 text-white dark:text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_sRNHd4QRu">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            <svg class="w-5 h-5 text-slate-900" fill="var(--icon-fill)" stroke="currentColor" viewBox="0 0 24 24" stroke-width="0px" xmlns="http://www.w3.org/2000/svg">
+                              <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                              <g id="SVGRepo_iconCarrier"> 
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#0F0F0F"></path> <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#0F0F0F"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#0F0F0F"></path> 
+                              </g>
                             </svg>
                           </div>
                           <div>
-                            <p class="text-sm font-bold text-gray-900 mb-0.5 dark:text-neutral-100">Response time</p>
-                            <p class="text-sm text-gray-500 dark:text-neutral-400">Within 24 hours on business days</p>
+                            <p class="text-sm font-bold mb-0.5 text-neutral-100">Instagram</p>
+                            <p class="text-sm text-neutral-400"><a class="fiverr" href="https://www.instagram.com/barshon.branding/" target="_blank">@barshon.saha</a></p>
                           </div>
                         </div>
                       </div>
-                      <div class="bg-slate-50 dark:bg-neutral-900/70 rounded-2xl shadow-sm border border-slate-200/70
-                          dark:border-slate-800/60 p-6">
+                      <div class=" bg-neutral-900/70 rounded-2xl shadow-sm border border-slate-800/60 p-6">
                         <div class="items-start flex gap-4">
-                          <div class="w-10 h-10 bg-slate-800 dark:bg-slate-200 dark::--color-slate-900 rounded-xl items-center justify-center flex
+                          <div class="w-10 h-10 bg-slate-200 --color-slate-900 rounded-xl items-center justify-center flex
                               flex-shrink-0">
-                            <svg class="w-5 h-5 text-white dark:text-slate-900 fiverr" fill="var(--icon-fill)"  viewBox="-2.5 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-fiverr"><path d="M16.25 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H10V0H8.125A5.632 5.632 0 0 0 2.5 5.625v.625H0V10h2.5v6.25H0V20h8.75v-3.75h-2.5V10h6.285v6.25H10V20h8.75v-3.75h-2.5z"></path><circle cx="14.375" cy="1.875" r="1.875"></circle></svg>
+                            <svg class="w-5 h-5 text-slate-900 fiverr" fill="var(--icon-fill)" stroke-width="0" viewBox="-2.5 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-fiverr"><path d="M16.25 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H10V0H8.125A5.632 5.632 0 0 0 2.5 5.625v.625H0V10h2.5v6.25H0V20h8.75v-3.75h-2.5V10h6.285v6.25H10V20h8.75v-3.75h-2.5z"></path><circle cx="14.375" cy="1.875" r="1.875"></circle></svg>
                           </div>
                           <div>
-                            <p class="text-sm font-bold text-gray-900 mb-0.5 dark:text-neutral-100">Fiverr</p>
-                            <p class="text-sm text-gray-500 dark:text-neutral-400"><a class="fiverr" href="https://www.fiverr.com/barshonsaha41?public_mode=true" target="_blank">Click here</a></p>
+                            <p class="text-sm font-bold mb-0.5 text-neutral-100">Fiverr</p>
+                            <p class="text-sm text-neutral-400"><a class="fiverr" href="https://www.fiverr.com/barshonsaha41?public_mode=true" target="_blank">Click here</a></p>
                           </div>
                         </div>
                       </div>              
@@ -854,73 +744,118 @@
       </section>
 
       
-      <footer class="bg-slate-50 dark:bg-neutral-900/50 py-10 px-4 sm:px-6 lg:px-8 border-t border-slate-200/70
-          dark:border-slate-800/60">
+      <footer class=" bg-neutral-900/50 py-10 px-4 sm:px-6 lg:px-8 border-t border-slate-800/60">
         <div class="mx-auto sm:flex-row items-center justify-between max-w-5xl flex flex-col gap-4">
             <a href="index.html" class="items-center flex gap-2">
-              <div class="w-8 h-8 bg-slate-800 dark:bg-slate-200 rounded-lg items-center justify-center flex">
-                  <svg class="w-4 h-4 text-white dark:text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="Windframe_Ud2HiCZ00"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-              </div>
-              <span class="text-base font-bold text-gray-900 tracking-tight dark:text-neutral-100">DesignStudio</span>
+              <span class="logo text-base font-bold tracking-tight text-neutral-100">Barshon</span>
             </a>
-          <p class="text-sm text-gray-400 dark:text-neutral-500">© 2026 Barshon Saha. All rights reserved.</p>
+          <p class="text-sm text-neutral-500">© 2026 Barshon Saha. All rights reserved.</p>
           <div class="items-center flex gap-5">
-              <a href="#about" class="text-sm text-gray-400 dark:text-neutral-500 hover:text-gray-700
-                  dark:hover:text-neutral-300 transition-colors">About</a>
-              <a href="#reviews" class="text-sm text-gray-400 dark:text-neutral-500 hover:text-gray-700
-                  dark:hover:text-neutral-300 transition-colors">Reviews</a>
-                  <a href="#posters" class="text-sm text-gray-400 dark:text-neutral-500 hover:text-gray-700
-                  dark:hover:text-neutral-300 transition-colors">Portfolio</a>
-              <a href="#pricing" class="text-sm text-gray-400 dark:text-neutral-500 hover:text-gray-700
-                  dark:hover:text-neutral-300 transition-colors">Pricing</a>
-              <a href="#contact" class="text-sm text-gray-400 dark:text-neutral-500 hover:text-gray-700
-                  dark:hover:text-neutral-300 transition-colors">Contact</a>
+              <a href="#about" class="text-sm text-neutral-500    hover:text-neutral-300 transition-colors">About</a>
+              <a href="#posters" class="text-sm text-neutral-500    hover:text-neutral-300 transition-colors">Portfolio</a>
+              <a href="#reviews" class="text-sm text-neutral-500    hover:text-neutral-300 transition-colors">Reviews</a>
+              <a href="#pricing" class="text-sm text-neutral-500    hover:text-neutral-300 transition-colors">Pricing</a>
+              <a href="#contact" class="text-sm text-neutral-500 hover:text-neutral-300 transition-colors">Contact</a>
           </div>
         </div>
       </footer>
+
+
+
+
+
+
     </div>
 
     <script>
         const btn = document.querySelector(".mobile-menu-button");
         const menu = document.querySelector(".mobile-menu");
-        btn?.addEventListener("click", () => {
+       btn?.addEventListener("click", () => {
         menu.classList.toggle("hidden");
         });
     </script>
     
-  
+    <script>
+  (function () {
+    var track = document.getElementById('rev-track');
+    var outer = document.getElementById('rev-outer');
+    var dotsEl = document.getElementById('rev-dots');
+    var prevBtn = document.getElementById('rev-prev');
+    var nextBtn = document.getElementById('rev-next');
+    var current = 0;
+    var total = track.children.length;
 
-    <script id="__scripts_code__1"> const lightSwitches = document.querySelectorAll(".wf-dark-mode-switch");
-          if (lightSwitches.length > 0) {
-            lightSwitches.forEach((lightSwitch, i) => {
-              if (localStorage.getItem("dark-mode") === "true") {
-                lightSwitch.checked = true;
-              }
-              lightSwitch.addEventListener("change", () => {
-                const { checked } = lightSwitch;
-                lightSwitches.forEach((el, n) => {
-                  if (n !== i) {
-                    el.checked = checked;
-                  }
-                });
-                if (lightSwitch.checked) {
-                  document.documentElement.classList.add("dark");
-                  localStorage.setItem("dark-mode", true);
-                } else {
-                  document.documentElement.classList.remove("dark");
-                  localStorage.setItem("dark-mode", false);
-                }
-              });
-            });
-          }
-          const lightSwitchesToggles = document.querySelectorAll(
-            ".wf-dark-mode-switch-toggle"
-          );
-          if (lightSwitches.length > 0 && lightSwitchesToggles.length > 0) {
-            lightSwitchesToggles.forEach((toggle, i) => {
-              toggle.addEventListener("click", () => lightSwitches[0].click());
-            });
-          }
-    </script>
+    // ── Touch swipe variables ──
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var isSwiping = false;
+
+    function getVisible() {
+      var w = window.innerWidth;
+      if (w <= 640) return 1;
+      if (w <= 900) return 2;
+      return 3;
+    }
+
+    function buildDots(pages) {
+      dotsEl.innerHTML = '';
+      for (var i = 0; i < pages; i++) {
+        var d = document.createElement('button');
+        d.className = 'rev-dot' + (i === current ? ' active' : '');
+        d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        (function(idx){ d.onclick = function(){ goTo(idx); }; })(i);
+        dotsEl.appendChild(d);
+      }
+    }
+
+    function goTo(idx) {
+      var vis = getVisible();
+      var pages = Math.ceil(total / vis);
+      current = Math.max(0, Math.min(idx, pages - 1));
+      var cardW = track.children[0].offsetWidth + 20;
+      track.style.transform = 'translateX(-' + (current * vis * cardW) + 'px)';
+      buildDots(pages);
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current >= pages - 1;
+    }
+
+    window.revMove = function(dir) { goTo(current + dir); };
+
+    // ── Touch event listeners ──
+    outer.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      isSwiping = true;
+    }, { passive: true });
+
+    outer.addEventListener('touchmove', function(e) {
+      if (!isSwiping) return;
+      var deltaX = Math.abs(e.touches[0].clientX - touchStartX);
+      var deltaY = Math.abs(e.touches[0].clientY - touchStartY);
+      // If scrolling vertically more than horizontally, cancel swipe
+      if (deltaY > deltaX) {
+        isSwiping = false;
+      }
+    }, { passive: true });
+
+    outer.addEventListener('touchend', function(e) {
+      if (!isSwiping) return;
+      var deltaX = e.changedTouches[0].clientX - touchStartX;
+      // Require at least 50px swipe to trigger
+      if (Math.abs(deltaX) > 50) {
+        if (deltaX < 0) {
+          goTo(current + 1); // swipe left → next
+        } else {
+          goTo(current - 1); // swipe right → prev
+        }
+      }
+      isSwiping = false;
+    }, { passive: true });
+
+    window.addEventListener('resize', function() { goTo(0); });
+    goTo(0);
+  })();
+</script>
+
   </body>
 </html>
